@@ -28,7 +28,13 @@ We will be implementing strategies in basic Python3.
 
 Each strategy is a python script that runs in an infinite loop, reading from the standard input and writing
 to standard output.
-In each iteration, the standard input contains the decision the opponent made in the previous round: `C` for **Collaborate**, `B` for **Betray**, `0` for initial input in the first iteration. Your script must then write out either `C` to Collaborate or `B` to Betray.
+In each iteration, the standard input contains the decision the opponent made in the previous round:
+
+- `C` for **Collaborate**,
+- `B` for **Betray**,
+- `0` for initial input in the first iteration.
+
+Your script must then answer with either `C` to Collaborate or `B` to Betray, writing to the standard output.
 
 There are examples in the [/strategies](https://github.com/evelinag/iterated-prisoners-dilemma/tree/main/strategies) folder.
 
