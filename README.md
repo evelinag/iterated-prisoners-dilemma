@@ -24,4 +24,62 @@ A somewhat more sophisticated strategy that responds to the other player:
 
 ## Implementing strategies
 
-We will be implementing strategies in Python.
+We will be implementing strategies in basic Python3.
+
+Each strategy is a python script that runs in an infinite loop, reading from the standard input and writing
+to standard output.
+In each iteration, the standard input contains the decision the opponent made in the previous round: `C` for **Collaborate**, `B` for **Betray**, `0` for initial input in the first iteration. Your script must then write out either `C` to Collaborate or `B` to Betray.
+
+There are examples in the [/strategies](https://github.com/evelinag/iterated-prisoners-dilemma/tree/main/strategies) folder.
+
+### Example strategy
+
+Let's look at the [tit-for-tat.py file](https://github.com/evelinag/iterated-prisoners-dilemma/blob/main/strategies/tit-for-tat.py) in more detail:
+
+```
+#!/usr/bin/env python
+import sys
+
+# Tit-for-tat with initial Betray
+
+while True:
+  inputs = sys.stdin.readline()
+  previous = inputs[0]
+  if previous == "C":
+      print("C\n")
+  else:
+      print("B\n")
+  sys.stdout.flush()
+```
+Notice the infinite loop that reads a line from the input, analyses it and writes out the decision. This particular tit-for-tat strategy decides to Betray in the beginning (when the input is `0`) and then copy the opponent's decisions.
+
+You can test the strategy locally by running:
+
+```
+python3 tit-for-tat.py
+```
+
+Any strategy you implement should follow the same structure.
+
+## Submitting the strategies
+
+All strategies will be run against each other in a competition.
+
+To submit a strategy, you will get a URL for a web application running the competition.
+You will be asked to fill in the name of your source file and the contents of your script, implementing a strategy. Please try to use unique file names, for example by including your team name in the file name.
+
+*Warning*
+
+This is not a robust game, it is a home-made hand crafted challenge for the REG team to have fun with. Please don't do weird things to crash my server!
+
+The web app is saving scripts inside a Docker container, so please keep your submissions saved on your computers in case we need to restart the app.
+
+Don't mine bitcoins inside the strategies, any strategy taking too long to decide will be automatically killed.
+
+## Notes
+
+This project uses and re-uses parts of:
+
+- [SAFE Template](https://safe-stack.github.io/docs/)
+- [Prisoner's Dilemma Dojo](https://github.com/tpetricek/prisoners-dilemma)
+- [Wrattler AI Assistants](https://github.com/wrattler/wrattler/tree/master/aiassistants)
