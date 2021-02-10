@@ -59,6 +59,8 @@ You can test the strategy locally by running:
 python3 tit-for-tat.py
 ```
 
+The app will be waiting for your input and responding with its decision.
+
 Any strategy you implement should follow the same structure.
 
 ## Submitting the strategies
