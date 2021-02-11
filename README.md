@@ -28,13 +28,19 @@ We will be implementing strategies in basic Python3.
 
 Each strategy is a python script that runs in an infinite loop, reading from the standard input and writing
 to standard output.
-In each iteration, the standard input contains the decision the opponent made in the previous round:
+In each iteration, the standard input contains the decision the opponent made in the previous round.
+
+**Inputs**
 
 - `C` for **Collaborate**,
 - `B` for **Betray**,
 - `0` for initial input in the first iteration.
 
-Your script must then answer with either `C` to Collaborate or `B` to Betray, writing to the standard output.
+Your script must then answer with its decision on the standard output, writing out:
+
+**Outputs**
+- either `C` to **Collaborate**
+- or `B` to **Betray**.
 
 There are examples in the [/strategies](https://github.com/evelinag/iterated-prisoners-dilemma/tree/main/strategies) folder.
 
@@ -65,9 +71,9 @@ You can test the strategy locally by running:
 python3 tit-for-tat.py
 ```
 
-The app will be waiting for your input and responding with its decision.
+The script will be waiting for your input and responding with its decision.
 
-Any strategy you implement should follow the same structure.
+Any strategy you implement should follow the same structure of reading inputs and writing outputs.
 
 ## Submitting the strategies
 
@@ -76,13 +82,11 @@ All strategies will be run against each other in a competition.
 To submit a strategy, you will get a URL for a web application running the competition.
 You will be asked to fill in the name of your source file and the contents of your script, implementing a strategy. Please try to use unique file names, for example by including your team name in the file name.
 
-*Warning*
+*Warnings*
 
-This is not a robust game, it is a home-made hand crafted challenge for the REG team to have fun with. Please don't do weird things to crash my server!
-
-The web app is saving scripts inside a Docker container, so please keep your submissions saved on your computers in case we need to restart the app.
-
-Don't mine bitcoins inside the strategies, any strategy taking too long to decide will be automatically killed.
+- This is not a robust game, it is a home-made hand crafted challenge for the REG team to have fun with. Please don't do weird things to crash my server!
+- The web app is saving scripts inside a Docker container, so please keep your submissions saved on your computers in case we need to restart the app.
+- Don't mine bitcoins inside the strategies, any strategy taking too long to decide will be automatically killed.
 
 ## Notes
 
